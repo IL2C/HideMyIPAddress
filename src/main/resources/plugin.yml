@@ -1,0 +1,5 @@
+name: HideMyIPAddress
+main: me.iliketocode.hmipa.bukkit.HMIPA
+version: 4
+author: ILikeToCode
+api-version: 1.13
