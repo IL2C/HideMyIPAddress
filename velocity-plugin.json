@@ -1,0 +1,11 @@
+{
+  "id": "hidemyipaddress",
+  "name": "HideMyIPAddress",
+  "version": "5",
+  "description": "Prevents servers on the network getting a players connected IP address",
+  "authors": [
+    "ILikeToCode"
+  ],
+  "dependencies": [],
+  "main": "me.iliketocode.hmipa.velocity.HMIPA"
+}
