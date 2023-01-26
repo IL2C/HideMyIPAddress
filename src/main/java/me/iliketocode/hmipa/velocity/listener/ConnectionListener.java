@@ -8,11 +8,11 @@ import me.iliketocode.hmipa.velocity.HMIPA;
 
 import java.lang.reflect.Field;
 
-public class Connection {
+public class ConnectionListener {
 
     private final HMIPA instance;
 
-    public Connection(HMIPA instance) {
+    public ConnectionListener(HMIPA instance) {
         this.instance = instance;
     }
 

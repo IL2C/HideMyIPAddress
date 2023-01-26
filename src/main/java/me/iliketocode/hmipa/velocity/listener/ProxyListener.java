@@ -6,11 +6,11 @@ import com.velocitypowered.api.event.proxy.ProxyPingEvent;
 import com.velocitypowered.api.proxy.InboundConnection;
 import me.iliketocode.hmipa.velocity.HMIPA;
 
-public class Proxy {
+public class ProxyListener {
 
     private final HMIPA instance;
 
-    public Proxy(HMIPA instance) {
+    public ProxyListener(HMIPA instance) {
         this.instance = instance;
     }
 
