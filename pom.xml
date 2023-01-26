@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.iliketocode</groupId>
     <artifactId>HideMyIPAddress</artifactId>
-    <version>Build 4</version>
+    <version>Build 5</version>
     <name>HideMyIPAddress</name>
     <description>Prevents servers on the network getting a players connected IP address</description>
 
