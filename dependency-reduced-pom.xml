@@ -29,7 +29,7 @@
           <relocations>
             <relocation>
               <pattern>org.bstats</pattern>
-              <shadedPattern>me.iliketocode.hmipa.bungee.utils</shadedPattern>
+              <shadedPattern>me.iliketocode.hmipa.utils</shadedPattern>
             </relocation>
           </relocations>
         </configuration>

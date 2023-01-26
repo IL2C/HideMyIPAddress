@@ -8,6 +8,8 @@ import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 import me.iliketocode.hmipa.velocity.listener.Connection;
 import me.iliketocode.hmipa.velocity.listener.Proxy;
+import org.bstats.velocity.Metrics;
+import org.slf4j.Logger;
 
 import java.lang.reflect.Field;
 import java.net.InetAddress;
@@ -18,11 +20,16 @@ import java.net.UnknownHostException;
 public class HMIPA {
 
     private final ProxyServer server;
+    private final Logger logger;
+    private final Metrics.Factory metricsFactory;
+
     private final InetSocketAddress inetSocketAddress;
 
     @Inject
-    public HMIPA(ProxyServer server) {
+    public HMIPA(ProxyServer server, Logger logger, Metrics.Factory metricsFactory) {
         this.server = server;
+        this.logger = logger;
+        this.metricsFactory = metricsFactory;
 
         try {
             this.inetSocketAddress = new InetSocketAddress(InetAddress.getByName("0.0.0.0"), 0);
@@ -33,6 +40,8 @@ public class HMIPA {
 
     @Subscribe
     public void onProxyInitialization(ProxyInitializeEvent event) {
+        metricsFactory.make(this, 17536);
+
         EventManager eventManager = server.getEventManager();
         eventManager.register(this, new Proxy(this));
         eventManager.register(this, new Connection(this));

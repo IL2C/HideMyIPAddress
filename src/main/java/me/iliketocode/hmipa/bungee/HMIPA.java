@@ -1,8 +1,8 @@
 package me.iliketocode.hmipa.bungee;
 
 import me.iliketocode.hmipa.bungee.listeners.Handshake;
-import me.iliketocode.hmipa.bungee.utils.Metrics;
 import net.md_5.bungee.api.plugin.Plugin;
+import org.bstats.bungeecord.Metrics;
 
 public class HMIPA extends Plugin {
 
