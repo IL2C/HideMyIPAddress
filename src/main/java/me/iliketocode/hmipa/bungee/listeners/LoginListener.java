@@ -1,4 +1,4 @@
-package me.iliketocode.hmipa.bungee.listener;
+package me.iliketocode.hmipa.bungee.listeners;
 
 import me.iliketocode.hmipa.bungee.HMIPA;
 import net.md_5.bungee.api.event.PreLoginEvent;
@@ -16,6 +16,6 @@ public class LoginListener implements Listener {
 
     @EventHandler(priority = -65)
     public void onPreLogin(PreLoginEvent event) {
-        instance.setAddress(((InitialHandler) event.getConnection()), null);
+        instance.setAddress((InitialHandler) event.getConnection());
     }
 }
