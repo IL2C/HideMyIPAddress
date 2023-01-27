@@ -22,6 +22,10 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
+            <id>BungeeCord Repository</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+        <repository>
             <id>PaperMC Repository</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
