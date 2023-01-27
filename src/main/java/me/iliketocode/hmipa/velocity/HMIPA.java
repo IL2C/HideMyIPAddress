@@ -14,7 +14,7 @@ import org.bstats.velocity.Metrics;
 import java.lang.reflect.Field;
 import java.net.InetSocketAddress;
 
-@Plugin(id = "hidemyipaddress", name = "HideMyIPAddress", version = "5", description = "Prevents servers on the network getting a players connected IP address", authors = {"ILikeToCode"})
+@Plugin(id = "hidemyipaddress", name = "HideMyIPAddress", version = "Build 5", description = "Prevents servers on the network getting a players connected IP address", authors = {"ILikeToCode"})
 public class HMIPA {
 
     private final ProxyServer server;
