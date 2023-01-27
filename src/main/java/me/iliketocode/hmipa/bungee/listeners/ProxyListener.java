@@ -3,7 +3,6 @@ package me.iliketocode.hmipa.bungee.listeners;
 import me.iliketocode.hmipa.bungee.HMIPA;
 import net.md_5.bungee.api.event.ProxyPingEvent;
 import net.md_5.bungee.api.plugin.Listener;
-import net.md_5.bungee.connection.InitialHandler;
 import net.md_5.bungee.event.EventHandler;
 
 public class ProxyListener implements Listener {
@@ -16,6 +15,6 @@ public class ProxyListener implements Listener {
 
     @EventHandler(priority = -65)
     public void onProxyPingStart(ProxyPingEvent event) {
-        instance.setAddress((InitialHandler) event.getConnection());
+        instance.setAddress(event.getConnection());
     }
 }

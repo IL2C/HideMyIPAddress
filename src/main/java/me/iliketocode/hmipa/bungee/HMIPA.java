@@ -6,8 +6,6 @@ import me.iliketocode.hmipa.bungee.listeners.ProxyListener;
 import me.iliketocode.hmipa.utils.InetSocketAddressUtil;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.plugin.PluginManager;
-import net.md_5.bungee.connection.InitialHandler;
-import net.md_5.bungee.netty.ChannelWrapper;
 import org.bstats.bungeecord.Metrics;
 
 import java.lang.reflect.Field;
@@ -24,7 +22,7 @@ public class HMIPA extends Plugin {
         pluginManager.registerListener(this, new ProxyListener(this));
     }
 
-    public void setAddress(InitialHandler initialHandler) {
+    public void setAddress(Object initialHandler) {
         InetSocketAddress inetSocketAddress = InetSocketAddressUtil.create();
 
         if (inetSocketAddress == null) {
@@ -32,15 +30,20 @@ public class HMIPA extends Plugin {
         }
 
         try {
-            Field chField = initialHandler.getClass().getDeclaredField("ch");
+            Class<?> initialHandlerClass = Class.forName("net.md_5.bungee.connection.InitialHandler");
+
+            Field chField = initialHandlerClass.getDeclaredField("ch");
             chField.setAccessible(true);
 
-            ChannelWrapper channelWrapper = (ChannelWrapper) chField.get(initialHandler);
+            Class<?> channelWrapperClass = Class.forName("net.md_5.bungee.netty.ChannelWrapper");
+            
+            Object channelWrapper = chField.get(initialHandler);
 
-            Field remoteAddressField = channelWrapper.getClass().getDeclaredField("remoteAddress");
+            Field remoteAddressField = channelWrapperClass.getDeclaredField("remoteAddress");
             remoteAddressField.setAccessible(true);
             remoteAddressField.set(channelWrapper, inetSocketAddress);
-        } catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+        } catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException |
+                 ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
