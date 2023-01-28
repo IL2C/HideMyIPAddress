@@ -36,7 +36,7 @@ public class HMIPA extends Plugin {
             chField.setAccessible(true);
 
             Class<?> channelWrapperClass = Class.forName("net.md_5.bungee.netty.ChannelWrapper");
-            
+
             Object channelWrapper = chField.get(initialHandler);
 
             Field remoteAddressField = channelWrapperClass.getDeclaredField("remoteAddress");

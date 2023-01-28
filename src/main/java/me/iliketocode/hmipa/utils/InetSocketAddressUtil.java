@@ -14,7 +14,8 @@ public class InetSocketAddressUtil {
 
     static {
         try {
-            InetSocketAddress inetSocketAddress = new InetSocketAddress(InetAddress.getByName("0.0.0.0"), random.nextInt(65535));
+            InetSocketAddress inetSocketAddress = new InetSocketAddress(InetAddress.getByName("0.0.0.0"),
+                    random.nextInt(65535));
 
             Field holderField = inetSocketAddress.getClass().getDeclaredField("holder");
             holderField.setAccessible(true);
