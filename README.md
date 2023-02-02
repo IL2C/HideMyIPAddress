@@ -1,2 +1,5 @@
 # HideMyIPAddress
-https://www.spigotmc.org/resources/77099/
+A BungeeCord & Velocity plugin that prevents servers on the proxy getting a players connected IP address.
+
+## License
+HideMyIPAddress is licensed under the [GPL-3.0 License](LICENSE.md).
